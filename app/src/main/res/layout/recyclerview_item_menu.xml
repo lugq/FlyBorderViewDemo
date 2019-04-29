@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="wrap_content">
     <!--android:background="@drawable/list_focus">-->
 
     <FrameLayout
@@ -14,37 +14,34 @@
             android:layout_width="130dp"
             android:layout_height="130dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/pro5"/>
+            android:src="@drawable/pro5" />
 
         <LinearLayout
             android:layout_width="130dp"
             android:layout_height="60dp"
             android:layout_gravity="bottom"
-            android:orientation="vertical"
+            android:alpha="0.7"
             android:background="@android:color/holo_blue_light"
-            android:alpha="0.7">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/Menu_Title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                tools:text="title"
-                android:textSize="20sp"/>
+                android:textSize="20sp"
+                tools:text="title" />
 
             <TextView
                 android:id="@+id/Menu_Content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                tools:text="content"
-                android:textSize="16sp"/>
+                android:textSize="16sp"
+                tools:text="content" />
 
         </LinearLayout>
 
-
     </FrameLayout>
-
-
 
 </FrameLayout>

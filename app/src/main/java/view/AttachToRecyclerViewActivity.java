@@ -3,6 +3,9 @@ package view;
 import android.app.Instrumentation;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.KeyEvent;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.example.jasonchen.flyborderviewdemo.R;
@@ -23,14 +26,27 @@ public class AttachToRecyclerViewActivity extends BaseActivity {
     private TvRecyclerView recyclerView;
     private MenuAdapter menuAdapter;
     private FlyBorderView flyBorder;
-    private RelativeLayout parentView;
+    private LinearLayout parentView;
+
+    int i = 0;
 
     @Override
     protected void setView() {
         setContentView(R.layout.activity_attachtorecyclerview);
-        recyclerView = (TvRecyclerView) findViewById(R.id.Main_RecyclerView);
-        flyBorder = (FlyBorderView) findViewById(R.id.FlyBorder);
-        parentView = (RelativeLayout) findViewById(R.id.ParentView);
+        recyclerView =  findViewById(R.id.Main_RecyclerView);
+        flyBorder =  findViewById(R.id.FlyBorder);
+        parentView =  findViewById(R.id.ParentView);
+
+        final Button btn_right = findViewById(R.id.btn_right);
+        btn_right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                i = i+1;
+                recyclerView.getChildAt(i).setFocusable(true);
+                recyclerView.getChildAt(i).setFocusableInTouchMode(true);
+                recyclerView.getChildAt(i).requestFocus();
+            }
+        });
     }
 
     @Override
