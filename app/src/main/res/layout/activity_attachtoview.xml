@@ -1,75 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/RootView"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
-    android:clipChildren="false"
-    android:clipToPadding="false">
+    android:orientation="vertical">
 
-    <RelativeLayout
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/RootView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
         android:clipChildren="false"
         android:clipToPadding="false"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/pro5"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            android:layout_margin="20dp"
-            android:src="@drawable/pro5"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:clipChildren="false"
+            android:clipToPadding="false">
 
-        <ImageView
-            android:id="@+id/pro3"
-            android:layout_width="150dp"
-            android:layout_height="200dp"
-            android:focusable="true"
-            android:src="@drawable/pro3"
-            android:layout_toRightOf="@id/pro5"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="50dp"/>
+            <ImageView
+                android:id="@+id/pro5"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="20dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:src="@drawable/pro5" />
 
-        <ImageView
-            android:id="@+id/pro"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:focusable="true"
-            android:src="@drawable/pro"
-            android:layout_toRightOf="@id/pro3"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="120dp"/>
+            <ImageView
+                android:id="@+id/pro3"
+                android:layout_width="150dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="50dp"
+                android:layout_toRightOf="@id/pro5"
+                android:focusable="true"
+                android:src="@drawable/pro3" />
 
-        <ImageView
-            android:layout_width="190dp"
-            android:layout_height="350dp"
-            android:focusable="true"
-            android:src="@drawable/pro4"
-            android:layout_toRightOf="@id/pro"
-            android:layout_margin="70dp" />
+            <ImageView
+                android:id="@+id/pro"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="120dp"
+                android:layout_toRightOf="@id/pro3"
+                android:focusable="true"
+                android:src="@drawable/pro" />
 
-        <ImageView
-            android:id="@+id/pro2"
-            android:layout_width="250dp"
-            android:layout_height="140dp"
-            android:focusable="true"
-            android:layout_below="@id/pro5"
-            android:src="@drawable/pro2"
-            android:layout_marginTop="80dp"
-            android:layout_marginLeft="40dp"/>
+            <ImageView
+                android:layout_width="190dp"
+                android:layout_height="350dp"
+                android:layout_margin="70dp"
+                android:layout_toRightOf="@id/pro"
+                android:focusable="true"
+                android:src="@drawable/pro4" />
+
+            <ImageView
+                android:id="@+id/pro2"
+                android:layout_width="250dp"
+                android:layout_height="140dp"
+                android:layout_below="@id/pro5"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="80dp"
+                android:focusable="true"
+                android:src="@drawable/pro2" />
+
+        </RelativeLayout>
+
+        <custom.FlyBorderView
+            android:id="@+id/FlyBorderView"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:background="@drawable/list_focus" />
 
     </RelativeLayout>
 
-    <custom.FlyBorderView
-        android:id="@+id/FlyBorderView"
-        android:layout_width="1dp"
+    <View
+        android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@drawable/list_focus"/>
+        android:background="#000" />
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="300dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="左" />
+
+            <Button
+                android:id="@+id/btn_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="右" />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下" />
+
+    </LinearLayout>
+
+</LinearLayout>

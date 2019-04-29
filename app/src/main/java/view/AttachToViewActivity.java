@@ -4,25 +4,48 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.example.jasonchen.flyborderviewdemo.R;
 
 import custom.FlyBorderView;
 
-/**
- * Created by JasonChen on 2017/9/26.
- */
-
 public class AttachToViewActivity extends BaseActivity {
     private RelativeLayout rootView;
     private FlyBorderView flyBorderView;
+    private Button btn_right, btn_left;
+    private ImageView pro3, pro5;
 
     @Override
     protected void setView() {
         setContentView(R.layout.activity_attachtoview);
         rootView = (RelativeLayout) findViewById(R.id.RootView);
         flyBorderView = (FlyBorderView) findViewById(R.id.FlyBorderView);
+        btn_right = findViewById(R.id.btn_right);
+        btn_left = findViewById(R.id.btn_left);
+        pro3 = findViewById(R.id.pro3);
+        pro5 = findViewById(R.id.pro5);
+
+        btn_right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFocus(pro3);
+            }
+        });
+        btn_left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFocus(pro5);
+            }
+        });
+    }
+
+    private void getFocus(View view) {
+        view.setFocusable(true);
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
     }
 
     @Override
