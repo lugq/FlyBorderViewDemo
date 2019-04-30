@@ -63,12 +63,16 @@ public class AttachToRecyclerViewActivity extends BaseActivity {
             @Override
             public void run() {
                 flyBorder.attachToRecyclerView(recyclerView);
-                recyclerView.getChildAt(0).setFocusable(true);
-                recyclerView.getChildAt(0).setFocusableInTouchMode(true);
-                recyclerView.getChildAt(0).requestFocus();
+                setFocusView(recyclerView.getChildAt(0));
             }
         });
 
+    }
+
+    private void setFocusView(View view) {
+        view.setFocusable(true);
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
     }
 
     @Override
