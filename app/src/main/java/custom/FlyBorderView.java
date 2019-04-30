@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
@@ -24,6 +25,8 @@ import com.example.jasonchen.flyborderviewdemo.R;
  */
 
 public class FlyBorderView extends View {
+    private static final String TAG = FlyBorderView.class.getSimpleName();
+
     private int borderWidth;//焦点移动飞框的边框
     private int duration = 200;//动画持续时间
 
@@ -46,6 +49,7 @@ public class FlyBorderView extends View {
      */
     public void attachToView(View newFocus, float scale) {
         final int widthInc = (int) ((newFocus.getWidth() * scale + 2 * borderWidth - getWidth()));//当前选中项与下一个选中项的宽度偏移量
+        Log.i(TAG, "widthInc:" + widthInc + ",newFocues.getWidth:" + newFocus.getWidth() + ", borderWidth:" + borderWidth + ", getWidth():" + getWidth());
         final int heightInc = (int) ((newFocus.getHeight() * scale + 2 * borderWidth - getHeight()));//当前选中项与下一个选中项的高度偏移量
         float translateX = newFocus.getLeft() - borderWidth
                 - (newFocus.getWidth() * scale - newFocus.getWidth()) / 2;//飞框到达下一个选中项的X轴偏移量
